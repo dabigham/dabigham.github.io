@@ -21,6 +21,16 @@
       height: 100px;
       margin: 20px;
     }
+
+    /* CSS grid for mobile devices */
+    @media screen and (max-width: 600px) {
+      body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
