@@ -13,13 +13,12 @@
     
     h1 {
       margin-top: 50px;
-      color: #ccc; /* Change text color to light gray */
+      color: #ccc;
       font-family: Palatino, serif;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Increase drop shadow intensity */
-      font-size: 90px; /* Increase font size */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      font-size: 90px;
     }
 
-    /* CSS grid for mobile devices */
     @media screen and (max-width: 600px) {
       body {
         display: grid;
@@ -29,7 +28,6 @@
       }
     }
     
-    /* Custom button styles */
     .button {
       display: inline-block;
       padding: 30px 60px;
@@ -41,7 +39,7 @@
       text-align: center;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
       transition: all 0.3s ease;
-      width: 400px; /* Add fixed width */
+      width: 400px;
     }
 
     .button:hover {
@@ -61,6 +59,10 @@
       margin-bottom: 20px;
       text-align: center;
     }
+
+    .non-clickable {
+      cursor: default;
+    }
   </style>
 </head>
 <body>
@@ -75,11 +77,11 @@
   </div>
 
   <div class="button-container">
-    <a href="https://www.tcgplayer.com/search/all/product?seller=b2a6ccf5&view=grid" class="button" style="background-color: purple;" onmouseover="this.innerHTML = 'Coming Soon!'" onmouseout="this.innerHTML = 'Buy Cards on TCGPlayer'" target="_blank">Buy Cards on TCGPlayer!</a>
+    <div class="button non-clickable" style="background-color: purple;" onmouseover="this.innerHTML = 'Coming Soon!'" onmouseout="this.innerHTML = 'Buy Cards on TCGPlayer'">Buy Cards on TCGPlayer!</div>
   </div>
 
   <div class="button-container">
-    <a href="https://www.etsy.com" class="button" style="background-color: orange;" onmouseover="this.innerHTML = 'Coming Soon!'" onmouseout="this.innerHTML = 'Unique Items on Etsy'" target="_blank">Check us out on Etsy!</a>
+    <div class="button non-clickable" style="background-color: orange;" onmouseover="this.innerHTML = 'Coming Soon!'" onmouseout="this.innerHTML = 'Unique Items on Etsy'">Check us out on Etsy!</div>
   </div>
 </body>
 </html>
