@@ -18,7 +18,7 @@
       flex-direction: column;
       align-items: center;
     }
-    
+   
     h1 {
       text-align: center;
       font-weight: 700;
@@ -27,42 +27,12 @@
       color: #ff4d6d;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     }
-
     @media screen and (max-width: 600px) {
       h1 {
         font-size: 40px;
       }
     }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .section {
-      width: 100%;
-      max-width: 400px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    @media screen and (min-width: 1000px) {
-      .container {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      .section {
-        width: 30%;
-        min-width: 300px;
-      }
-    }
-
+   
     .bubble {
       position: relative;
       background: #ffffff;
@@ -76,16 +46,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin-bottom: 20px;
+      margin: 20px auto;
     }
-
     .construction-bubble {
       background: #ffd60a;
       color: #1a1a1a;
       border: 3px solid #ffffff;
       transform: rotate(-2deg);
     }
-
     .construction-bubble::before {
       content: '';
       position: absolute;
@@ -98,85 +66,11 @@
       border: 3px solid #ffffff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-
     .bubble p {
       font-size: 18px;
       font-weight: 600;
       margin: 0;
     }
-
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      border-radius: 50px;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      width: 320px;
-      min-height: 60px;
-      margin: 10px 0;
-      cursor: default;
-      white-space: normal;
-      word-wrap: break-word;
-    }
-
-    .button:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .ebay-button {
-      background: linear-gradient(45deg, #0064d2 0%, #86b817 100%);
-      border: 2px solid #ffffff;
-    }
-
-    .tcgplayer-button {
-      background: linear-gradient(45deg, #2e1a47 0%, #4b2e83 100%);
-      border: 2px solid #ffffff;
-    }
-
-    .etsy-button {
-      background: linear-gradient(45deg, #f1641e 0%, #ff8c00 100%);
-      border: 2px solid #ffffff;
-    }
-
-    .calendar-button {
-      background-color: #6c757d;
-      border: 2px solid #ffffff;
-    }
-
-    .youtube-button {
-      background-color: #ff0000;
-      border: 2px solid #ffffff;
-    }
-
-    .facebook-button {
-      background-color: #1877f2;
-      border: 2px solid #ffffff;
-    }
-
-    .instagram-button {
-      background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-      border: 2px solid #ffffff;
-    }
-
-    .digital-button {
-      background-color: #1a1a1a;
-      border: 2px solid #ffffff;
-    }
-
-    .digital-button:hover {
-      background-image: 
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 6px),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 6px);
-    }
-
     @media screen and (max-width: 600px) {
       .bubble {
         max-width: 90%;
@@ -184,14 +78,6 @@
         height: auto;
         min-height: 140px;
       }
-
-      .button {
-        width: 90%;
-        max-width: 320px;
-        font-size: 16px;
-        min-height: 56px;
-      }
-
       .bubble p {
         font-size: 16px;
       }
@@ -200,40 +86,9 @@
 </head>
 <body>
   <h1>Hamilton Hobby</h1>
-  
-  <div class="container">
-    <div class="section">
-      <div class="bubble construction-bubble">
-        <p>Pardon our dust! Full webstore will launch on January 2nd, 2026, after we finish our move.</p>
-      </div>
-      <!-- Placeholder: Update to event calendar link when set up -->
-      <div class="button calendar-button" onmouseover="this.innerHTML = 'Upcoming Events & Releases'" onmouseout="this.innerHTML = 'Event Calendar'">Event Calendar</div>
-      <div class="button digital-button" onmouseover="this.innerHTML = 'Digital Content Available 9/1/2025'" onmouseout="this.innerHTML = 'Digital Dungeon'">Digital Dungeon</div>
-    </div>
-
-    <div class="section">
-      <div class="bubble">
-        <p>Check out our rotating 'Curio & Consignment' items throughout our move:</p>
-      </div>
-      <!-- Placeholder: Update to https://www.ebay.com/usr/hamiltonhobby when set up -->
-      <div class="button ebay-button" onmouseover="this.innerHTML = 'Rotating Inventory of Hobby Items'" onmouseout="this.innerHTML = 'View our eBay Store'">View our eBay Store</div>
-      <!-- Placeholder: Update to https://store.tcgplayer.com/seller?SellerName=Hamilton%20Hobby when set up -->
-      <div class="button tcgplayer-button" onmouseover="this.innerHTML = 'Trading Card Singles/Bulk'" onmouseout="this.innerHTML = 'Stack Your Deck @ TCGPlayer'">Stack Your Deck @ TCGPlayer</div>
-      <!-- Placeholder: Update to https://www.etsy.com/shop/HamiltonHobby when set up -->
-      <div class="button etsy-button" onmouseover="this.innerHTML = 'Mystery and Large Event Games'" onmouseout="this.innerHTML = 'Coming Soon on Etsy'">Coming Soon on Etsy</div>
-    </div>
-
-    <div class="section">
-      <div class="bubble">
-        <p>Check us out and keep up to date:</p>
-      </div>
-      <!-- Placeholder: Update to YouTube link when set up -->
-      <div class="button youtube-button" onmouseover="this.innerHTML = 'Hobby Videos & Tutorials'" onmouseout="this.innerHTML = 'YouTube'">YouTube</div>
-      <!-- Placeholder: Update to Instagram link when set up -->
-      <div class="button instagram-button" onmouseover="this.innerHTML = 'Hobby Highlights & Photos'" onmouseout="this.innerHTML = 'Instagram'">Instagram</div>
-      <!-- Placeholder: Update to Facebook link when set up -->
-      <div class="button facebook-button" onmouseover="this.innerHTML = 'Community Updates & News'" onmouseout="this.innerHTML = 'Facebook'">Facebook</div>
-    </div>
+ 
+  <div class="bubble construction-bubble">
+    <p>Pardon our dust! Full webstore will launch on January 2nd, 2026, after we finish our move.</p>
   </div>
 </body>
 </html>
