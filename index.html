@@ -90,12 +90,56 @@
             box-shadow: 0 15px 35px rgba(255, 0, 170, 0.4);
         }
         
-        .big-button.coming-soon {
+        /* Game Theory Portal - Full-width hover replacement */
+        .game-theory-button {
+            min-height: 195px;
+            font-size: 1.20rem;
+            padding: 28px 25px;
+            border-color: var(--contact-neon);
+            color: var(--contact-neon);
+            transition: all 0.4s ease;
+        }
+        
+        .game-theory-button:hover {
+            border-color: #ffaa00;
+            color: #ffaa00;
+            transform: translateY(-4px) scale(1.02);
+        }
+        
+        .game-theory-button .normal-text {
+            transition: opacity 0.4s ease;
+            width: 100%;
+        }
+        
+        .game-theory-button:hover .normal-text {
+            opacity: 0;
+        }
+        
+        .game-theory-button .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 92%;               /* Almost full width of the button */
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            font-size: 0.89rem;
+            line-height: 1.45;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .game-theory-button:hover .hover-text {
+            opacity: 1;
+        }
+        
+        /* Other coming-soon buttons keep old style */
+        .big-button.coming-soon:not(.game-theory-button) {
             cursor: not-allowed;
             filter: brightness(0.9);
         }
         
-        .big-button.coming-soon:hover {
+        .big-button.coming-soon:not(.game-theory-button):hover {
             transform: none;
             box-shadow: none;
         }
@@ -119,7 +163,7 @@
             line-height: 1.35;
         }
         
-        .big-button.coming-soon:hover .coming-soon-text {
+        .big-button.coming-soon:not(.game-theory-button):hover .coming-soon-text {
             opacity: 1;
         }
         
@@ -200,7 +244,7 @@
             margin: 4px auto 0;
         }
         
-        /* RIGHT COLUMN: Contact Us + Game Theory Portal */
+        /* RIGHT COLUMN */
         .right-column {
             display: flex;
             flex-direction: column;
@@ -280,28 +324,6 @@
             line-height: 1.45;
         }
         
-        /* Game Theory Portal - enlarged button + smaller hover text */
-        .game-theory-section {
-            background: rgba(40, 15, 10, 0.9);
-            border: 3px solid var(--contact-neon);
-            padding: 28px;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(255, 68, 0, 0.35);
-        }
-        
-        .game-theory-button {
-            min-height: 170px !important;
-            font-size: 1.25rem;
-            padding: 28px 18px;
-        }
-        
-        .game-theory-button .coming-soon-text {
-            font-size: 0.84rem !important;
-            padding: 14px 22px !important;
-            max-width: 98% !important;
-            line-height: 1.4;
-        }
-        
         footer {
             text-align: center;
             padding: 40px 20px 30px;
@@ -315,6 +337,9 @@
             .container {
                 grid-template-columns: 1fr;
                 gap: 50px;
+            }
+            .game-theory-button {
+                min-height: 210px;
             }
         }
     </style>
@@ -354,7 +379,7 @@
             </div>
         </div>
         
-        <!-- MIDDLE: Event Calendar (FIXED alignment) -->
+        <!-- MIDDLE: Event Calendar -->
         <div class="calendar-section">
             <h2 class="section-title">EVENT CALENDAR</h2>
             
@@ -370,7 +395,7 @@
                     <div class="day-name">Fri</div>
                     <div class="day-name">Sat</div>
                     
-                    <!-- CORRECT March 2026 layout: March 1 = Sunday (0 empty cells) -->
+                    <!-- Correct March 2026 -->
                     <div class="calendar-day">1</div>
                     <div class="calendar-day">2</div>
                     <div class="calendar-day">3</div>
@@ -414,11 +439,11 @@
             </div>
             
             <p style="margin-top: 25px; font-size: 0.94rem; color: #ddd; text-align: center; line-height: 1.5;">
-                Check back soon or contact us for upcoming events!
+                Check back soon or contact us for events!
             </p>
         </div>
         
-        <!-- RIGHT COLUMN: Contact Us + Game Theory Portal -->
+        <!-- RIGHT COLUMN -->
         <div class="right-column">
             
             <!-- Contact Us -->
@@ -433,7 +458,7 @@
                     
                     <div>
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="How can we assist you?"></textarea>
+                        <textarea id="message" name="message" required placeholder="How may we assist?"></textarea>
                     </div>
                     
                     <div>
@@ -445,13 +470,14 @@
                 </form>
             </div>
             
-            <!-- Game Theory Portal (enlarged + hover text now fits) -->
+            <!-- Game Theory Portal - Full-width hover text -->
             <div class="game-theory-section">
-                <div class="big-button coming-soon game-theory-button">
-                    GAME THEORY PORTAL
-                    <div class="coming-soon-text">
-                        We are not taking on any more major consulting for 2026.<br>
-                        Small projects or far-future work? Please use the Contact Us section!
+                <div class="big-button game-theory-button">
+                    <div class="normal-text">GAME THEORY CONSULTING PORTAL</div>
+                    <div class="hover-text">
+                        We are not currently taking on any more major consulting for 2026.<br><br>
+                        Have a small project or something in the future?<br>
+                        Please Contact Us!
                     </div>
                 </div>
             </div>
@@ -498,7 +524,7 @@
             });
         }
         
-        console.log("%cHamilton Hobby - Calendar & Hover Fixed", "color:#00ff9d; font-family:monospace");
+        console.log("%cHamilton Hobby - Game Theory hover now uses full button width", "color:#00ff9d; font-family:monospace");
     </script>
 </body>
 </html>
