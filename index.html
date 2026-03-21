@@ -200,7 +200,7 @@
             margin: 4px auto 0;
         }
         
-        /* RIGHT: Contact Us + Game Theory Portal */
+        /* RIGHT COLUMN: Contact Us + Game Theory Portal */
         .right-column {
             display: flex;
             flex-direction: column;
@@ -280,13 +280,26 @@
             line-height: 1.45;
         }
         
-        /* Game Theory Portal - now under Contact Us, orange theme */
+        /* Game Theory Portal - enlarged button + smaller hover text */
         .game-theory-section {
             background: rgba(40, 15, 10, 0.9);
             border: 3px solid var(--contact-neon);
             padding: 28px;
             border-radius: 8px;
             box-shadow: 0 0 30px rgba(255, 68, 0, 0.35);
+        }
+        
+        .game-theory-button {
+            min-height: 170px !important;
+            font-size: 1.25rem;
+            padding: 28px 18px;
+        }
+        
+        .game-theory-button .coming-soon-text {
+            font-size: 0.84rem !important;
+            padding: 14px 22px !important;
+            max-width: 98% !important;
+            line-height: 1.4;
         }
         
         footer {
@@ -341,7 +354,7 @@
             </div>
         </div>
         
-        <!-- MIDDLE: Event Calendar -->
+        <!-- MIDDLE: Event Calendar (FIXED alignment) -->
         <div class="calendar-section">
             <h2 class="section-title">EVENT CALENDAR</h2>
             
@@ -357,35 +370,46 @@
                     <div class="day-name">Fri</div>
                     <div class="day-name">Sat</div>
                     
-                    <!-- Corrected March 2026 calendar (March 1, 2026 was a Sunday) -->
-                    <div class="calendar-day"></div> <!-- Feb 28 placeholder if needed, but starting clean -->
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
+                    <!-- CORRECT March 2026 layout: March 1 = Sunday (0 empty cells) -->
                     <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day">7</div>
                     
-                    <div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div>
-                    <div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div>
                     <div class="calendar-day">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day">14</div>
                     
-                    <div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div>
-                    <div class="calendar-day">12</div><div class="calendar-day">13</div><div class="calendar-day">14</div>
                     <div class="calendar-day">15</div>
-                    
-                    <div class="calendar-day">16</div><div class="calendar-day">17</div><div class="calendar-day">18</div>
-                    <div class="calendar-day">19</div><div class="calendar-day">20</div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day">17</div>
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day">20</div>
                     <div class="calendar-day today">21<span class="event-dot"></span></div>
+                    
                     <div class="calendar-day">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
                     
-                    <div class="calendar-day">23</div><div class="calendar-day">24</div><div class="calendar-day">25</div>
-                    <div class="calendar-day">26</div><div class="calendar-day">27</div><div class="calendar-day">28</div>
                     <div class="calendar-day">29</div>
-                    
-                    <div class="calendar-day">30</div><div class="calendar-day">31</div>
-                    <div class="calendar-day"></div><div class="calendar-day"></div>
-                    <div class="calendar-day"></div><div class="calendar-day"></div>
+                    <div class="calendar-day">30</div>
+                    <div class="calendar-day">31</div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
                 </div>
             </div>
             
@@ -421,11 +445,11 @@
                 </form>
             </div>
             
-            <!-- Game Theory Portal - now below Contact Us -->
+            <!-- Game Theory Portal (enlarged + hover text now fits) -->
             <div class="game-theory-section">
-                <div class="big-button coming-soon" style="border-color: var(--contact-neon); color: var(--contact-neon); min-height: 130px;">
+                <div class="big-button coming-soon game-theory-button">
                     GAME THEORY PORTAL
-                    <div class="coming-soon-text" style="font-size: 0.88rem; padding: 12px 20px; max-width: 96%;">
+                    <div class="coming-soon-text">
                         We are not taking on any more major consulting for 2026.<br>
                         Small projects or far-future work? Please use the Contact Us section!
                     </div>
@@ -474,7 +498,7 @@
             });
         }
         
-        console.log("%cHamilton Hobby - Final Adjustments Applied", "color:#00ff9d; font-family:monospace");
+        console.log("%cHamilton Hobby - Calendar & Hover Fixed", "color:#00ff9d; font-family:monospace");
     </script>
 </body>
 </html>
