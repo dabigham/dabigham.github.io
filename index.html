@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamilton Hobby</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         
         :root {
             --primary: #00ff9d;
             --accent: #ff00aa;
+            --contact-neon: #ff4400;
             --dark: #0a0a0a;
             --light: #f0f0f0;
         }
@@ -31,7 +32,7 @@
         header {
             background: rgba(10, 10, 10, 0.95);
             border-bottom: 4px solid var(--primary);
-            padding: 20px 0;
+            padding: 25px 0;
             text-align: center;
             position: sticky;
             top: 0;
@@ -40,12 +41,9 @@
         }
         
         .logo {
-            font-size: 3.5rem;
-            font-weight: 400;
+            font-size: 3.4rem;
             color: var(--primary);
-            text-shadow: 
-                0 0 10px var(--primary),
-                0 0 20px var(--accent);
+            text-shadow: 0 0 10px var(--primary), 0 0 25px var(--accent);
             letter-spacing: 4px;
         }
         
@@ -54,113 +52,47 @@
             margin: 0 auto;
             padding: 40px 20px;
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 35px;
         }
         
-        /* Contact Us Section */
-        .contact-section {
-            background: rgba(20, 20, 40, 0.8);
-            border: 3px solid var(--primary);
-            padding: 30px;
-            border-radius: 8px;
-            height: fit-content;
-            box-shadow: 0 0 30px rgba(0, 255, 157, 0.2);
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            text-align: center;
-            text-shadow: 0 0 10px var(--primary);
-        }
-        
-        form {
+        /* LEFT: Buttons */
+        .buttons-section {
             display: flex;
             flex-direction: column;
-            gap: 18px;
-        }
-        
-        label {
-            font-size: 0.9rem;
-            color: var(--light);
-        }
-        
-        input, textarea {
-            background: #111;
-            border: 2px solid var(--primary);
-            color: var(--light);
-            padding: 12px 15px;
-            font-family: inherit;
-            font-size: 1rem;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 15px rgba(255, 0, 170, 0.5);
-        }
-        
-        textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-        
-        button {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 15px;
-            font-family: inherit;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        button:hover {
-            background: #ff44bb;
-            transform: scale(1.03);
-            box-shadow: 0 0 20px var(--accent);
-        }
-        
-        /* Middle Section - Buttons */
-        .middle-section {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            justify-content: center;
+            gap: 26px;
         }
         
         .big-button {
             background: linear-gradient(145deg, #1a1a2e, #16213e);
             border: 4px solid var(--primary);
             color: var(--primary);
-            padding: 28px 20px;
+            padding: 26px 18px;
             text-align: center;
-            font-size: 1.35rem;
+            font-size: 1.28rem;
+            line-height: 1.25;
             cursor: pointer;
             transition: all 0.4s;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             position: relative;
             overflow: hidden;
+            min-height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .big-button:hover {
             border-color: var(--accent);
             color: var(--accent);
-            transform: translateY(-8px) scale(1.04);
-            box-shadow: 0 20px 40px rgba(255, 0, 170, 0.4);
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(255, 0, 170, 0.4);
         }
         
         .big-button.coming-soon {
             cursor: not-allowed;
-            filter: brightness(0.85);
+            filter: brightness(0.9);
         }
         
         .big-button.coming-soon:hover {
@@ -173,37 +105,40 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             color: #ff4444;
-            padding: 8px 25px;
-            font-size: 1.1rem;
+            padding: 10px 18px;
+            font-size: 0.90rem;
             border: 3px solid #ff4444;
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s;
-            white-space: nowrap;
+            white-space: normal;
+            text-align: center;
+            max-width: 94%;
+            line-height: 1.35;
         }
         
         .big-button.coming-soon:hover .coming-soon-text {
             opacity: 1;
         }
         
-        .note {
-            color: #ff4444;
-            font-size: 0.85rem;
-            text-align: center;
-            margin-top: 12px;
-            font-style: italic;
-        }
-        
-        /* Upcoming Events Section */
-        .events-section {
-            background: rgba(20, 20, 40, 0.8);
+        /* MIDDLE: Event Calendar */
+        .calendar-section {
+            background: rgba(20, 20, 40, 0.85);
             border: 3px solid var(--primary);
             padding: 30px;
             border-radius: 8px;
-            height: fit-content;
             box-shadow: 0 0 30px rgba(0, 255, 157, 0.2);
+            height: fit-content;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 22px;
+            text-align: center;
+            text-shadow: 0 0 10px var(--primary);
         }
         
         .calendar-container {
@@ -211,11 +146,8 @@
             border: 2px solid var(--accent);
             padding: 20px;
             border-radius: 6px;
-            margin-top: 20px;
-            min-height: 380px;
         }
         
-        /* Simple Calendar Placeholder - we'll enhance this */
         .calendar {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -227,23 +159,23 @@
         .calendar-header {
             grid-column: 1 / -1;
             background: #1a0033;
-            padding: 10px;
+            padding: 12px;
             color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
         }
         
         .day-name {
             background: #220033;
-            padding: 8px 4px;
+            padding: 8px 2px;
             font-size: 0.8rem;
             color: var(--accent);
         }
         
         .calendar-day {
             background: #111122;
-            padding: 12px 4px;
-            min-height: 50px;
+            padding: 10px 4px;
+            min-height: 48px;
             border: 1px solid #333;
             transition: all 0.2s;
         }
@@ -261,23 +193,112 @@
         
         .event-dot {
             display: block;
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             background: #00ff9d;
             border-radius: 50%;
             margin: 4px auto 0;
         }
         
+        /* RIGHT: Contact Us + Game Theory Portal */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        
+        .contact-section {
+            background: rgba(40, 15, 10, 0.9);
+            border: 3px solid var(--contact-neon);
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(255, 68, 0, 0.35);
+        }
+        
+        .contact-section .section-title {
+            color: var(--contact-neon);
+            text-shadow: 0 0 12px var(--contact-neon);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        label {
+            font-size: 0.95rem;
+            color: var(--light);
+        }
+        
+        input, textarea {
+            background: #111;
+            border: 2px solid var(--contact-neon);
+            color: var(--light);
+            padding: 14px 16px;
+            font-family: inherit;
+            font-size: 1.05rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ffaa00;
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.6);
+        }
+        
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+        
+        button {
+            background: var(--contact-neon);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-family: inherit;
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        button:hover {
+            background: #ff6600;
+            transform: scale(1.04);
+            box-shadow: 0 0 25px var(--contact-neon);
+        }
+        
+        .note {
+            color: #ff6666;
+            font-size: 0.88rem;
+            text-align: center;
+            margin-top: 18px;
+            line-height: 1.45;
+        }
+        
+        /* Game Theory Portal - now under Contact Us, orange theme */
+        .game-theory-section {
+            background: rgba(40, 15, 10, 0.9);
+            border: 3px solid var(--contact-neon);
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(255, 68, 0, 0.35);
+        }
+        
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px 30px;
             color: #666;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             border-top: 2px solid #222;
             margin-top: 60px;
         }
         
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
             .container {
                 grid-template-columns: 1fr;
                 gap: 50px;
@@ -292,32 +313,8 @@
     
     <div class="container">
         
-        <!-- LEFT: Contact Us -->
-        <div class="contact-section">
-            <h2 class="section-title">CONTACT US</h2>
-            
-            <form id="contactForm" onsubmit="handleSubmit(event)">
-                <div>
-                    <label for="title">Title / Subject</label>
-                    <input type="text" id="title" name="title" required placeholder="e.g. Custom Order Request">
-                </div>
-                
-                <div>
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required placeholder="Tell us what you need..."></textarea>
-                </div>
-                
-                <div>
-                    <label for="contact">Return Contact (Email or Phone)</label>
-                    <input type="text" id="contact" name="contact" required placeholder="your@email.com or (555) 123-4567">
-                </div>
-                
-                <button type="submit">SEND MESSAGE</button>
-            </form>
-        </div>
-        
-        <!-- MIDDLE: Store Buttons -->
-        <div class="middle-section">
+        <!-- LEFT: Buttons -->
+        <div class="buttons-section">
             <div onclick="window.open('https://miniswap.gg/sign-up?ref=acc_6MnKX5r8JtpSSzBo', '_blank')" 
                  class="big-button">
                 CHECK US OUT ON<br>MINISWAP!
@@ -334,25 +331,24 @@
             </div>
             
             <div class="big-button coming-soon">
-                REDEEM DIGITAL DOWNLOADS
+                DIGITAL DOWNLOADS
                 <div class="coming-soon-text">COMING SOON!</div>
-                <div class="note">
-                    For unredeemed digital products purchased prior to 1/1/2026,<br>
-                    please use the Contact Us section!
-                </div>
+            </div>
+            
+            <div class="note">
+                For digital products purchased prior to 1/1/2026,<br>
+                please Contact Us!
             </div>
         </div>
         
-        <!-- RIGHT: Upcoming Events -->
-        <div class="events-section">
-            <h2 class="section-title">UPCOMING EVENTS</h2>
+        <!-- MIDDLE: Event Calendar -->
+        <div class="calendar-section">
+            <h2 class="section-title">EVENT CALENDAR</h2>
             
             <div class="calendar-container">
                 <div class="calendar-header">March 2026</div>
                 
-                <!-- Simple Calendar -->
                 <div class="calendar">
-                    <!-- Weekday headers -->
                     <div class="day-name">Sun</div>
                     <div class="day-name">Mon</div>
                     <div class="day-name">Tue</div>
@@ -361,9 +357,8 @@
                     <div class="day-name">Fri</div>
                     <div class="day-name">Sat</div>
                     
-                    <!-- Calendar days - placeholder for March 2026 -->
-                    <!-- You can make this dynamic later -->
-                    <div class="calendar-day"></div>
+                    <!-- Corrected March 2026 calendar (March 1, 2026 was a Sunday) -->
+                    <div class="calendar-day"></div> <!-- Feb 28 placeholder if needed, but starting clean -->
                     <div class="calendar-day"></div>
                     <div class="calendar-day"></div>
                     <div class="calendar-day"></div>
@@ -371,62 +366,80 @@
                     <div class="calendar-day"></div>
                     <div class="calendar-day">1</div>
                     
-                    <div class="calendar-day">2</div>
-                    <div class="calendar-day">3</div>
-                    <div class="calendar-day">4</div>
-                    <div class="calendar-day">5</div>
-                    <div class="calendar-day">6</div>
-                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div>
                     <div class="calendar-day">8</div>
                     
-                    <div class="calendar-day">9</div>
-                    <div class="calendar-day">10</div>
-                    <div class="calendar-day">11</div>
-                    <div class="calendar-day">12</div>
-                    <div class="calendar-day">13</div>
-                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div><div class="calendar-day">13</div><div class="calendar-day">14</div>
                     <div class="calendar-day">15</div>
                     
-                    <div class="calendar-day">16</div>
-                    <div class="calendar-day">17</div>
-                    <div class="calendar-day">18</div>
-                    <div class="calendar-day">19</div>
-                    <div class="calendar-day">20</div>
+                    <div class="calendar-day">16</div><div class="calendar-day">17</div><div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div><div class="calendar-day">20</div>
                     <div class="calendar-day today">21<span class="event-dot"></span></div>
                     <div class="calendar-day">22</div>
                     
-                    <div class="calendar-day">23</div>
-                    <div class="calendar-day">24</div>
-                    <div class="calendar-day">25</div>
-                    <div class="calendar-day">26</div>
-                    <div class="calendar-day">27</div>
-                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">23</div><div class="calendar-day">24</div><div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div><div class="calendar-day">27</div><div class="calendar-day">28</div>
                     <div class="calendar-day">29</div>
                     
-                    <div class="calendar-day">30</div>
-                    <div class="calendar-day">31</div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
+                    <div class="calendar-day">30</div><div class="calendar-day">31</div>
+                    <div class="calendar-day"></div><div class="calendar-day"></div>
+                    <div class="calendar-day"></div><div class="calendar-day"></div>
                 </div>
-                
-                <p style="margin-top: 20px; font-size: 0.9rem; color: #aaa; text-align: center;">
-                    More events coming soon!<br>
-                    Check back often or contact us for details.
-                </p>
             </div>
+            
+            <p style="margin-top: 25px; font-size: 0.94rem; color: #ddd; text-align: center; line-height: 1.5;">
+                Check back soon or contact us for upcoming events!
+            </p>
+        </div>
+        
+        <!-- RIGHT COLUMN: Contact Us + Game Theory Portal -->
+        <div class="right-column">
+            
+            <!-- Contact Us -->
+            <div class="contact-section">
+                <h2 class="section-title">CONTACT US</h2>
+                
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="">
+                    </div>
+                    
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="How can we assist you?"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    
+                    <button type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
+            
+            <!-- Game Theory Portal - now below Contact Us -->
+            <div class="game-theory-section">
+                <div class="big-button coming-soon" style="border-color: var(--contact-neon); color: var(--contact-neon); min-height: 130px;">
+                    GAME THEORY PORTAL
+                    <div class="coming-soon-text" style="font-size: 0.88rem; padding: 12px 20px; max-width: 96%;">
+                        We are not taking on any more major consulting for 2026.<br>
+                        Small projects or far-future work? Please use the Contact Us section!
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
     
     <footer>
-        © 2026 Hamilton Hobby • All Rights Reserved<br>
-        Built with passion for the hobby community
+        © 2026 Hamilton Hobby • All Rights Reserved
     </footer>
 
     <script>
-        // Form submission handler - sends to your email via FormSubmit (free & simple)
         function handleSubmit(e) {
             e.preventDefault();
             
@@ -434,31 +447,26 @@
             const submitBtn = form.querySelector('button');
             const originalText = submitBtn.textContent;
             
-            // Disable button during submission
             submitBtn.textContent = "SENDING...";
             submitBtn.disabled = true;
             
-            // Use FormSubmit.co - completely free, no backend needed
-            // This will email al.hamiltonhobby@gmail.com
             const formData = new FormData(form);
             
             fetch('https://formsubmit.co/al.hamiltonhobby@gmail.com', {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             })
             .then(response => {
                 if (response.ok) {
                     alert("✅ Message sent successfully! We'll get back to you soon.");
                     form.reset();
                 } else {
-                    alert("⚠️ Something went wrong. Please try again or email us directly.");
+                    alert("⚠️ There was an issue. Please try again.");
                 }
             })
             .catch(() => {
-                alert("⚠️ Connection issue. Please try again later.");
+                alert("⚠️ Could not connect. Please try again later.");
             })
             .finally(() => {
                 submitBtn.textContent = originalText;
@@ -466,8 +474,7 @@
             });
         }
         
-        // Optional: Add some retro CRT effect or keyboard sound on buttons (fun for hobby site)
-        console.log("%cHamilton Hobby site loaded successfully! 🚀", "color:#00ff9d; font-family:monospace");
+        console.log("%cHamilton Hobby - Final Adjustments Applied", "color:#00ff9d; font-family:monospace");
     </script>
 </body>
 </html>
