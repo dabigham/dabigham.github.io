@@ -9,7 +9,7 @@
        
         :root {
             --primary: #00ff9d;
-            --accent: #ff00aa;          /* purple/magenta for day names & today */
+            --accent: #ff00aa;
             --contact-neon: #ff4400;
             --logo-neon: #00f0ff;
             --calendar-neon: #ff3366;
@@ -51,7 +51,7 @@
             gap: 35px;
         }
        
-        /* LEFT: Buttons + MiniSwap credit */
+        /* LEFT COLUMN */
         .buttons-section {
             display: flex;
             flex-direction: column;
@@ -115,11 +115,13 @@
             opacity: 1;
         }
        
+        /* MiniSwap credit - EXACT spacing you asked for */
         .miniswap-credit {
             text-align: center;
-            margin-top: 28px;           /* extra space before eBay button */
+            margin-top: 12px;     /* smaller gap after MiniSwap button */
+            margin-bottom: 40px;  /* larger gap before eBay button */
             font-size: 0.85rem;
-            color: #ff6666;             /* same red as bottom note */
+            color: #ff6666;
             line-height: 1.4;
         }
        
@@ -164,21 +166,21 @@
             opacity: 1;
         }
        
-        /* MIDDLE: Calendar - tighter border + toned-down title + hover */
+        /* MIDDLE: Calendar - tight border */
         .calendar-section {
             background: rgba(20, 20, 40, 0.85);
             border: 3px solid var(--calendar-neon);
-            padding: 25px 20px 8px;     /* tighter bottom to stop long border */
+            padding: 25px 20px 6px;   /* reduced bottom padding to stop long border */
             border-radius: 8px;
             box-shadow: 0 0 18px rgba(255, 51, 102, 0.35);
         }
        
         .section-title {
             font-size: 1.8rem;
-            color: var(--accent);       /* purple/magenta like day names */
+            color: var(--accent);
             margin-bottom: 18px;
             text-align: center;
-            text-shadow: 0 0 3px var(--accent), 0 0 6px #ff00aa; /* very tight & crisp */
+            text-shadow: 0 0 3px var(--accent), 0 0 6px #ff00aa;
         }
        
         .calendar-container {
@@ -348,7 +350,7 @@
             </div>
         </div>
        
-        <!-- MIDDLE: Calendar -->
+        <!-- MIDDLE -->
         <div class="calendar-section">
             <h2 class="section-title">EVENT CALENDAR</h2>
            
@@ -448,7 +450,6 @@
                 grid.appendChild(dayDiv);
             }
         }
-        
         window.onload = renderLiveCalendar;
         
         // CONTACT FORM
