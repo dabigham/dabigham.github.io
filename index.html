@@ -11,8 +11,8 @@
             --primary: #00ff9d;
             --accent: #ff00aa;
             --contact-neon: #ff4400;
-            --logo-neon: #00f0ff;      /* Neon cyan/blue */
-            --calendar-neon: #ff3366;   /* Neon red/pink */
+            --logo-neon: #00f0ff;
+            --calendar-neon: #ff3366;
         }
        
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,7 +38,7 @@
         .logo {
             font-size: 3.4rem;
             color: var(--logo-neon);
-            text-shadow: 0 0 6px var(--logo-neon), 0 0 12px #00ccff; /* Tight glow */
+            text-shadow: 0 0 6px var(--logo-neon), 0 0 12px #00ccff;
             letter-spacing: 4px;
         }
        
@@ -51,7 +51,7 @@
             gap: 35px;
         }
        
-        /* LEFT: Buttons */
+        /* LEFT: Buttons + MiniSwap credit */
         .buttons-section {
             display: flex;
             flex-direction: column;
@@ -84,7 +84,6 @@
             transform: translateY(-6px) scale(1.03);
         }
        
-        /* Coming Soon buttons - hover only */
         .big-button.coming-soon {
             cursor: not-allowed;
             filter: brightness(0.9);
@@ -116,7 +115,15 @@
             opacity: 1;
         }
        
-        /* Game Theory Portal */
+        .miniswap-credit {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #00ff9d;
+            line-height: 1.4;
+        }
+       
+        /* Game Theory Portal (unchanged) */
         .game-theory-button {
             min-height: 195px;
             font-size: 1.20rem;
@@ -157,21 +164,21 @@
             opacity: 1;
         }
        
-        /* MIDDLE: Event Calendar - Clean neon red */
+        /* MIDDLE: Event Calendar - tightened border + live JS */
         .calendar-section {
             background: rgba(20, 20, 40, 0.85);
             border: 3px solid var(--calendar-neon);
-            padding: 30px;
+            padding: 25px 20px 10px; /* even tighter bottom padding */
             border-radius: 8px;
-            box-shadow: 0 0 18px rgba(255, 51, 102, 0.35); /* Tight red glow */
+            box-shadow: 0 0 18px rgba(255, 51, 102, 0.35);
         }
        
         .section-title {
             font-size: 1.8rem;
             color: var(--calendar-neon);
-            margin-bottom: 22px;
+            margin-bottom: 18px;
             text-align: center;
-            text-shadow: 0 0 6px var(--calendar-neon), 0 0 10px #ff2266; /* Much tighter */
+            text-shadow: 0 0 5px var(--calendar-neon), 0 0 9px #ff2266;
         }
        
         .calendar-container {
@@ -187,7 +194,7 @@
             padding: 12px;
             color: var(--calendar-neon);
             font-size: 1.15rem;
-            text-shadow: 0 0 6px var(--calendar-neon);
+            text-shadow: 0 0 5px var(--calendar-neon);
         }
        
         .calendar {
@@ -210,6 +217,7 @@
             padding: 10px 4px;
             min-height: 48px;
             border: 1px solid #333;
+            transition: all 0.2s;
         }
        
         .calendar-day.today {
@@ -304,10 +312,14 @@
    
     <div class="container">
        
-        <!-- LEFT -->
+        <!-- LEFT: Buttons + updated MiniSwap credit -->
         <div class="buttons-section">
             <div onclick="window.open('https://miniswap.gg/sign-up?ref=acc_6MnKX5r8JtpSSzBo', '_blank')" class="big-button">
                 CHECK US OUT ON<br>MINISWAP!
+            </div>
+            <div class="miniswap-credit">
+                New to MiniSwap?<br>
+                Get a $5 credit by signing up with our affiliate link above!
             </div>
            
             <div onclick="window.open('https://www.ebay.com/usr/kitbashcollective', '_blank')" class="big-button">
@@ -330,70 +342,22 @@
             </div>
         </div>
        
-        <!-- MIDDLE: Calendar -->
+        <!-- MIDDLE: LIVE Event Calendar -->
         <div class="calendar-section">
             <h2 class="section-title">EVENT CALENDAR</h2>
            
             <div class="calendar-container">
-                <div class="calendar-header">March 2026</div>
+                <div id="calendar-header" class="calendar-header">March 2026</div>
                
-                <div class="calendar">
-                    <div class="day-name">Sun</div>
-                    <div class="day-name">Mon</div>
-                    <div class="day-name">Tue</div>
-                    <div class="day-name">Wed</div>
-                    <div class="day-name">Thu</div>
-                    <div class="day-name">Fri</div>
-                    <div class="day-name">Sat</div>
-                   
-                    <div class="calendar-day">1</div>
-                    <div class="calendar-day">2</div>
-                    <div class="calendar-day">3</div>
-                    <div class="calendar-day">4</div>
-                    <div class="calendar-day">5</div>
-                    <div class="calendar-day">6</div>
-                    <div class="calendar-day">7</div>
-                   
-                    <div class="calendar-day">8</div>
-                    <div class="calendar-day">9</div>
-                    <div class="calendar-day">10</div>
-                    <div class="calendar-day">11</div>
-                    <div class="calendar-day">12</div>
-                    <div class="calendar-day">13</div>
-                    <div class="calendar-day">14</div>
-                   
-                    <div class="calendar-day">15</div>
-                    <div class="calendar-day">16</div>
-                    <div class="calendar-day">17</div>
-                    <div class="calendar-day">18</div>
-                    <div class="calendar-day">19</div>
-                    <div class="calendar-day">20</div>
-                    <div class="calendar-day today">21<span class="event-dot"></span></div>
-                   
-                    <div class="calendar-day">22</div>
-                    <div class="calendar-day">23</div>
-                    <div class="calendar-day">24</div>
-                    <div class="calendar-day">25</div>
-                    <div class="calendar-day">26</div>
-                    <div class="calendar-day">27</div>
-                    <div class="calendar-day">28</div>
-                   
-                    <div class="calendar-day">29</div>
-                    <div class="calendar-day">30</div>
-                    <div class="calendar-day">31</div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                    <div class="calendar-day"></div>
-                </div>
+                <div id="calendar-grid" class="calendar"></div>
             </div>
            
-            <p style="margin-top: 25px; font-size: 0.94rem; color: #ddd; text-align: center; line-height: 1.5;">
+            <p style="margin-top: 15px; font-size: 0.94rem; color: #ddd; text-align: center; line-height: 1.5;">
                 Check back soon or contact us for events!
             </p>
         </div>
        
-        <!-- RIGHT -->
+        <!-- RIGHT COLUMN -->
         <div class="right-column">
             <div class="contact-section">
                 <h2 class="section-title">CONTACT US</h2>
@@ -436,6 +400,62 @@
     </footer>
 
     <script>
+        // ====================== LIVE CALENDAR ======================
+        function renderLiveCalendar() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const date = now.getDate();
+            
+            const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            document.getElementById('calendar-header').textContent = `${monthNames[month]} ${year}`;
+            
+            const calendarGrid = document.getElementById('calendar-grid');
+            calendarGrid.innerHTML = ''; // clear static content
+            
+            // Day names
+            const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            dayNames.forEach(name => {
+                const div = document.createElement('div');
+                div.className = 'day-name';
+                div.textContent = name;
+                calendarGrid.appendChild(div);
+            });
+            
+            // First day of the month (0 = Sunday)
+            const firstDay = new Date(year, month, 1).getDay();
+            // Number of days in the month
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            // Empty cells before the 1st
+            for (let i = 0; i < firstDay; i++) {
+                const empty = document.createElement('div');
+                empty.className = 'calendar-day';
+                calendarGrid.appendChild(empty);
+            }
+            
+            // Actual days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day';
+                dayDiv.textContent = day;
+                
+                // Highlight today
+                if (day === date) {
+                    dayDiv.classList.add('today');
+                    const dot = document.createElement('span');
+                    dot.className = 'event-dot';
+                    dayDiv.appendChild(dot);
+                }
+                
+                calendarGrid.appendChild(dayDiv);
+            }
+        }
+        
+        // Run when page loads
+        window.onload = renderLiveCalendar;
+        
+        // ====================== CONTACT FORM ======================
         function handleSubmit(e) {
             e.preventDefault();
             const form = document.getElementById('contactForm');
@@ -450,8 +470,15 @@
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
             })
-            .then(response => response.ok ? alert("✅ Message sent successfully!") : alert("⚠️ There was an issue."))
-            .catch(() => alert("⚠️ Could not connect."))
+            .then(response => {
+                if (response.ok) {
+                    alert("✅ Message sent successfully! We'll get back to you soon.");
+                    form.reset();
+                } else {
+                    alert("⚠️ There was an issue. Please try again.");
+                }
+            })
+            .catch(() => alert("⚠️ Could not connect. Please try again later."))
             .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
