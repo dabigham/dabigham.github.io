@@ -115,17 +115,45 @@
             opacity: 1;
         }
        
-        /* MiniSwap credit - EXACT spacing you asked for */
+        /* MiniSwap & eBay hover replacement */
+        .big-button .normal-text {
+            transition: opacity 0.4s ease;
+            width: 100%;
+        }
+       
+        .big-button:hover .normal-text {
+            opacity: 0;
+        }
+       
+        .big-button .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 92%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            font-size: 0.89rem;
+            line-height: 1.45;
+            text-align: center;
+            padding: 0 15px;
+            color: #ff4444;
+        }
+       
+        .big-button:hover .hover-text {
+            opacity: 1;
+        }
+       
         .miniswap-credit {
             text-align: center;
-            margin-top: 12px;     /* smaller gap after MiniSwap button */
-            margin-bottom: 40px;  /* larger gap before eBay button */
+            margin-top: 12px;      /* small gap after MiniSwap button */
+            margin-bottom: 40px;   /* larger gap before eBay button */
             font-size: 0.85rem;
             color: #ff6666;
             line-height: 1.4;
         }
        
-        /* Game Theory Portal */
+        /* Game Theory Portal (unchanged) */
         .game-theory-button {
             min-height: 195px;
             font-size: 1.20rem;
@@ -139,38 +167,11 @@
             color: #ffaa00;
         }
        
-        .game-theory-button .normal-text {
-            transition: opacity 0.4s ease;
-            width: 100%;
-        }
-       
-        .game-theory-button:hover .normal-text {
-            opacity: 0;
-        }
-       
-        .game-theory-button .hover-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 92%;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            font-size: 0.89rem;
-            line-height: 1.45;
-            text-align: center;
-            padding: 0 15px;
-        }
-       
-        .game-theory-button:hover .hover-text {
-            opacity: 1;
-        }
-       
-        /* MIDDLE: Calendar - tight border */
+        /* MIDDLE: Calendar */
         .calendar-section {
             background: rgba(20, 20, 40, 0.85);
             border: 3px solid var(--calendar-neon);
-            padding: 25px 20px 6px;   /* reduced bottom padding to stop long border */
+            padding: 25px 20px 6px;   /* tight bottom padding */
             border-radius: 8px;
             box-shadow: 0 0 18px rgba(255, 51, 102, 0.35);
         }
@@ -194,9 +195,9 @@
             grid-column: 1 / -1;
             background: #1a0033;
             padding: 12px;
-            color: var(--calendar-neon);
+            color: #f0f0f0;                 /* white like the day numbers */
             font-size: 1.15rem;
-            text-shadow: 0 0 5px var(--calendar-neon);
+            text-shadow: 0 0 5px #f0f0f0;
         }
        
         .calendar {
@@ -323,7 +324,8 @@
         <!-- LEFT -->
         <div class="buttons-section">
             <div onclick="window.open('https://miniswap.gg/sign-up?ref=acc_6MnKX5r8JtpSSzBo', '_blank')" class="big-button">
-                CHECK US OUT ON<br>MINISWAP!
+                <div class="normal-text">CHECK US OUT ON<br>MINISWAP!</div>
+                <div class="hover-text">New Store and Inventory Coming April 6, 2026!</div>
             </div>
             <div class="miniswap-credit">
                 New to MiniSwap?<br>
@@ -331,7 +333,8 @@
             </div>
            
             <div onclick="window.open('https://www.ebay.com/usr/kitbashcollective', '_blank')" class="big-button">
-                CHECK US OUT ON<br>EBAY!
+                <div class="normal-text">CHECK US OUT ON<br>EBAY!</div>
+                <div class="hover-text">New Store and Inventory Coming April 6, 2026!</div>
             </div>
            
             <div class="big-button coming-soon">
@@ -462,7 +465,7 @@
             submitBtn.textContent = "SENDING...";
             submitBtn.disabled = true;
            
-            fetch('https://formsubmit.co/c3cf06503883643eba38858a72214407', {
+            fetch('https://formsubmit.co/al.hamiltonhobby@gmail.com', {
                 method: 'POST',
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
