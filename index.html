@@ -51,7 +51,6 @@
             gap: 35px;
         }
        
-        /* LEFT COLUMN */
         .buttons-section {
             display: flex;
             flex-direction: column;
@@ -115,17 +114,17 @@
             opacity: 1;
         }
        
-        /* MiniSwap & eBay hover replacement */
-        .big-button .normal-text {
+        /* MiniSwap - clickable with overlay hover text */
+        .miniswap-button .normal-text {
             transition: opacity 0.4s ease;
             width: 100%;
         }
        
-        .big-button:hover .normal-text {
+        .miniswap-button:hover .normal-text {
             opacity: 0;
         }
        
-        .big-button .hover-text {
+        .miniswap-button .hover-text {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -140,20 +139,20 @@
             color: #ff4444;
         }
        
-        .big-button:hover .hover-text {
+        .miniswap-button:hover .hover-text {
             opacity: 1;
         }
        
         .miniswap-credit {
             text-align: center;
-            margin-top: 12px;      /* small gap after MiniSwap button */
-            margin-bottom: 40px;   /* larger gap before eBay button */
+            margin-top: 12px;
+            margin-bottom: 40px;
             font-size: 0.85rem;
             color: #ff6666;
             line-height: 1.4;
         }
        
-        /* Game Theory Portal (unchanged) */
+        /* Game Theory Portal - untouched */
         .game-theory-button {
             min-height: 195px;
             font-size: 1.20rem;
@@ -167,11 +166,38 @@
             color: #ffaa00;
         }
        
+        .game-theory-button .normal-text {
+            transition: opacity 0.4s ease;
+            width: 100%;
+        }
+       
+        .game-theory-button:hover .normal-text {
+            opacity: 0;
+        }
+       
+        .game-theory-button .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 92%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            font-size: 0.89rem;
+            line-height: 1.45;
+            text-align: center;
+            padding: 0 15px;
+        }
+       
+        .game-theory-button:hover .hover-text {
+            opacity: 1;
+        }
+       
         /* MIDDLE: Calendar */
         .calendar-section {
             background: rgba(20, 20, 40, 0.85);
             border: 3px solid var(--calendar-neon);
-            padding: 25px 20px 6px;   /* tight bottom padding */
+            padding: 25px 20px 6px;
             border-radius: 8px;
             box-shadow: 0 0 18px rgba(255, 51, 102, 0.35);
         }
@@ -195,7 +221,7 @@
             grid-column: 1 / -1;
             background: #1a0033;
             padding: 12px;
-            color: #f0f0f0;                 /* white like the day numbers */
+            color: #f0f0f0;
             font-size: 1.15rem;
             text-shadow: 0 0 5px #f0f0f0;
         }
@@ -323,28 +349,32 @@
        
         <!-- LEFT -->
         <div class="buttons-section">
-            <div onclick="window.open('https://miniswap.gg/sign-up?ref=acc_6MnKX5r8JtpSSzBo', '_blank')" class="big-button">
+            <!-- MiniSwap - clickable with proper overlay hover -->
+            <div onclick="window.open('https://miniswap.gg/sign-up?ref=acc_6MnKX5r8JtpSSzBo', '_blank')" class="big-button miniswap-button">
                 <div class="normal-text">CHECK US OUT ON<br>MINISWAP!</div>
-                <div class="hover-text">New Store and Inventory Coming April 6, 2026!</div>
+                <div class="hover-text">Products Coming Soon!</div>
             </div>
             <div class="miniswap-credit">
                 New to MiniSwap?<br>
                 Get a $5 credit by signing up with our affiliate link above!
             </div>
            
-            <div onclick="window.open('https://www.ebay.com/usr/kitbashcollective', '_blank')" class="big-button">
-                <div class="normal-text">CHECK US OUT ON<br>EBAY!</div>
-                <div class="hover-text">New Store and Inventory Coming April 6, 2026!</div>
+            <!-- eBay - non-clickable -->
+            <div class="big-button coming-soon">
+                CHECK US OUT ON<br>EBAY!
+                <div class="coming-soon-text">Returning Soon!</div>
             </div>
            
+            <!-- TCGPlayer -->
             <div class="big-button coming-soon">
                 CHECK US OUT ON<br>TCGPLAYER!
-                <div class="coming-soon-text">COMING SOON!</div>
+                <div class="coming-soon-text">Returning Soon!</div>
             </div>
            
+            <!-- Digital Downloads -->
             <div class="big-button coming-soon">
                 DIGITAL DOWNLOADS
-                <div class="coming-soon-text">COMING SOON!</div>
+                <div class="coming-soon-text">Returning Soon!</div>
             </div>
            
             <div class="note">
@@ -363,7 +393,7 @@
             </div>
            
             <p style="margin-top: 12px; font-size: 0.94rem; color: #ddd; text-align: center; line-height: 1.5;">
-                Check back soon or contact us for events!
+                We have pressed pause, please check back soon!
             </p>
         </div>
        
@@ -410,7 +440,6 @@
     </footer>
 
     <script>
-        // LIVE CALENDAR
         function renderLiveCalendar() {
             const now = new Date();
             const year = now.getFullYear();
@@ -455,7 +484,6 @@
         }
         window.onload = renderLiveCalendar;
         
-        // CONTACT FORM
         function handleSubmit(e) {
             e.preventDefault();
             const form = document.getElementById('contactForm');
